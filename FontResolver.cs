@@ -19,7 +19,10 @@ namespace cs_form_230622_pdf
 
                 case "梅明朝":
                     return LoadFontData($@"{cur}\ume-tmo3.ttf");
-                    
+
+                case "梅PゴシックC4":
+                    return LoadFontData($@"{cur}\ume-pgc4.ttf");
+
             }
 
             return null;
@@ -56,6 +59,8 @@ namespace cs_form_230622_pdf
                 case "梅明朝":
                     return new FontResolverInfo("梅明朝");
 
+                case "梅PゴシックC4":
+                    return new FontResolverInfo("梅PゴシックC4");
             }
 
             return null;

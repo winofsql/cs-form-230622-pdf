@@ -57,7 +57,7 @@
             // 
             梅フォント.DropDownStyle = ComboBoxStyle.DropDownList;
             梅フォント.FormattingEnabled = true;
-            梅フォント.Items.AddRange(new object[] { "梅Hyゴシック", "梅HyゴシックO5", "梅明朝" });
+            梅フォント.Items.AddRange(new object[] { "梅Hyゴシック", "梅HyゴシックO5", "梅明朝", "梅PゴシックC4" });
             梅フォント.Location = new Point(59, 56);
             梅フォント.Name = "梅フォント";
             梅フォント.Size = new Size(248, 38);

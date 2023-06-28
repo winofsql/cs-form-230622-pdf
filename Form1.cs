@@ -42,6 +42,9 @@ namespace cs_form_230622_pdf
             // XFontオブジェクトを作成
             XFont font = new XFont(this.梅フォント.Text, 12, XFontStyle.Regular);
 
+            XPen pen = new XPen(XColors.HotPink, 1);
+            pen.DashStyle = XDashStyle.Dash;
+
             // データベースへの接続文字列を作成
             string connectionString = "Driver={MySQL ODBC 8.0 Unicode Driver};Server=localhost;Database=lightbox;User=root;Password=;";
             using (OdbcConnection connection = new OdbcConnection(connectionString))
@@ -78,6 +81,10 @@ namespace cs_form_230622_pdf
                             gfx.DrawString(name, font, XBrushes.Black, new XRect(150, yPosition, 200, 20), XStringFormats.TopLeft);
                             gfx.DrawString(salary.ToString("N0").PadLeft(10), font, XBrushes.Black, new XRect(350, yPosition, 100, 20), xsf);
 
+                            gfx.DrawRectangle(pen, new XRect(50, yPosition, 100, 15));
+                            gfx.DrawRectangle(pen, new XRect(150, yPosition, 200, 15));
+                            gfx.DrawRectangle(pen, new XRect(350, yPosition, 100, 15));
+
                             yPosition += 20;
 
                         }
@@ -100,8 +107,14 @@ namespace cs_form_230622_pdf
 
             // タイトル行の描画
             gfx.DrawString("社員コード", font, XBrushes.Black, new XRect(50, yPosition, 100, 20), XStringFormats.TopLeft);
+            gfx.DrawRectangle(XPens.Black, new XRect(50, yPosition, 100, 15));
+
             gfx.DrawString("氏名", font, XBrushes.Black, new XRect(150, yPosition, 200, 20), XStringFormats.TopLeft);
+            gfx.DrawRectangle(XPens.Black, new XRect(150, yPosition, 200, 15));
+
             gfx.DrawString("給与".PadLeft(10), font, XBrushes.Black, new XRect(350, yPosition, 100, 20), xsf);
+            gfx.DrawRectangle(XPens.Black, new XRect(350, yPosition, 100, 15));
+
             yPosition += 20;
 
         }
